@@ -51,6 +51,14 @@ function desencriptar() {
         resultado = resultado + letra;
     }
     textoDesencriptado.value = resultado;
+    if (textoDesencriptado?.value == "") {
+        image.style.display = "block";
+        mensaje.style.display = "block";
+        mensaje2.style.display = "none";
+    } else {
+        display();
+        document.getElementById("resultado").style.display = "block";
+    }
 }
 
 
