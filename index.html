@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Encriptador Alura</title>
+  </head>
+  <body>
+    <header class="contenedorLogo">
+      <h1>
+        <img src="Toplogo.jpg" alt="Logo" class="logo" />
+      </h1>
+    </header>
+    <div >
+      <div class="ingresar">
+        <textarea
+          name="texto"
+          id="texto"
+          class="texto"
+          placeholder="Ingrese el texto aqui"
+        ></textarea>
+        <div class="botones">
+            <p class="advertencia"><img src="bi_exclamation-circle-fill.png" alt="!"/>  Solo letras minúsculas y sin acentos</p>
+          <button id="encriptar" class="encript">Encriptar</button>
+          <button id="desencriptar" class="desencript">Desencriptar</button>
+        </div>
+      </div>
+
+      <div class="resultado">
+        <div class="imaMuneco" id="image">
+          <img src="Muñeco.jpg" alt="Imagen" />
+        </div>
+        <div class="textoResultado">
+          <textarea id="resultado" class="result"></textarea>
+          <p class="sinmensaje" id="mensaje"> Ningún mensaje fue encontrado<br></p>
+          <p id="mensaje2">
+          Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+    </div>
+    <button id="copiar" onclick="copiar()" class="copiar">Copiar</button>
+</div>
+    <footer class="footer">
+      <div class="creditos">
+        <img src="https://static.vecteezy.com/system/resources/previews/000/643/482/original/vector-copyright-symbol-icon.jpg" class="copyright"/>
+          Desarrollado por Erick Ernesto Rangel Serano <br>en colaboracion con Alura
+      </div>
+      <div class="redes">
+        <a href="https://github.com/Erick-Rangel" target="_blank"><img src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png" alt="Github" class="github" /></a>
+        <a href="#" target="_blank" ><img src="https://blog.carltonstaffing.com/wp-content/uploads/2020/09/linkedin-icon-logo-png-transparent-1024x1024.png"/></a>
+      </div>
+    </footer>
+
+    <script src="encriptador.js"></script>
+  </body>
+</html>
