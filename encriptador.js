@@ -88,6 +88,7 @@ function copiar() {
     mensaje.style.display = "block";
     mensaje2.style.display = "block";
 
+    textoEncriptar.value = "";
     
     alert("Texto copiado");
 
