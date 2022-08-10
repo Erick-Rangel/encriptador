@@ -7,9 +7,9 @@ var textoDesencriptado = document.getElementById("resultado");
 var image = document.getElementById("image");
 var mensaje = document.getElementById("mensaje");
 var mensaje2 = document.getElementById("mensaje2");
-console.log(mensaje)
 
-function display(){
+
+function display() {
     image.style.display = "none";
     mensaje.style.display = "none";
     mensaje2.style.display = "none";
@@ -20,47 +20,86 @@ function encriptar() {
     var texto = textoEncriptar.value;
     var minusculas = texto.toLowerCase();
     var resultado = "";
+    var letras = {
+        a: "ai",
+        e: "enter",
+        i: "imes",
+        o: "ober",
+        u: "ufat"
+    }
+
     for (var i = 0; i < minusculas.length; i++) {
-        var letra = minusculas.charAt(i);
-        var codigo = letra.charCodeAt(0);
-        codigo = codigo + 1;
-        letra = String.fromCharCode(codigo);
-        resultado = resultado + letra;
+        var letra = minusculas[i];
+        if (letras[letra]) {
+            resultado += letras[letra];
+        } else {
+            resultado += letra;
+        }
     }
     textoEncriptado.value = resultado;
-    if(textoEncriptado?.value == ""){
+    if (textoEncriptado?.value == "") {
         image.style.display = "block";
         mensaje.style.display = "block";
-        mensaje2.style.display = "none";
+        mensaje2.style.display = "block";
     } else {
         display();
         document.getElementById("resultado").style.display = "block";
     }
-
 }
-
 
 function desencriptar() {
     var texto = textoDesencriptar.value;
     var resultado = "";
+        resultado = texto.replace(/ai/g, "a");
+        resultado = resultado.replace(/enter/g, "e");
+        resultado = resultado.replace(/imes/g, "i");
+        resultado = resultado.replace(/ober/g, "o");
+        resultado = resultado.replace(/ufat/g, "u");
+
+    textoDesencriptado.value = resultado;
+    console.log(resultado);
+
+    if (textoDesencriptado?.value == "") {
+        image.style.display = "block";
+        mensaje.style.display = "block";
+        mensaje2.style.display = "block";
+    } else {
+        display();
+        document.getElementById("resultado").style.display = "block";
+    }
+}
+
+
+
+/* 
+function desencriptar() {
+    var texto = textoDesencriptar.value;
+    var resultado = "";
+    var minusculas = {
+         "ai": "a",
+        "enter": "e",
+        "imes": "i",
+        "ober": "o",
+        "ufat": "u"
+    }
+    
     for (var i = 0; i < texto.length; i++) {
-        var letra = texto.charAt(i);
-        var codigo = letra.charCodeAt(0);
-        codigo = codigo - 1;
-        letra = String.fromCharCode(codigo);
-        resultado = resultado + letra;
+        var letra = texto[i];
+        if (minusculas[letra]) {
+            resultado += minusculas[letra];
+        } 
     }
     textoDesencriptado.value = resultado;
     if (textoDesencriptado?.value == "") {
         image.style.display = "block";
         mensaje.style.display = "block";
-        mensaje2.style.display = "none";
+        mensaje2.style.display = "block";
     } else {
         display();
         document.getElementById("resultado").style.display = "block";
     }
 }
-
+ */
 
 var botonEncriptar = document.getElementById("encriptar");
 botonEncriptar.addEventListener("click", encriptar);
@@ -89,7 +128,7 @@ function copiar() {
     mensaje2.style.display = "block";
 
     textoEncriptar.value = "";
-    
+
     alert("Texto copiado");
 
 }
