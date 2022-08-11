@@ -44,6 +44,7 @@ function encriptar() {
     } else {
         display();
         document.getElementById("resultado").style.display = "block";
+        document.getElementById("copiar").style.display = "block";
     }
 }
 
@@ -71,36 +72,6 @@ function desencriptar() {
 
 
 
-/* 
-function desencriptar() {
-    var texto = textoDesencriptar.value;
-    var resultado = "";
-    var minusculas = {
-         "ai": "a",
-        "enter": "e",
-        "imes": "i",
-        "ober": "o",
-        "ufat": "u"
-    }
-    
-    for (var i = 0; i < texto.length; i++) {
-        var letra = texto[i];
-        if (minusculas[letra]) {
-            resultado += minusculas[letra];
-        } 
-    }
-    textoDesencriptado.value = resultado;
-    if (textoDesencriptado?.value == "") {
-        image.style.display = "block";
-        mensaje.style.display = "block";
-        mensaje2.style.display = "block";
-    } else {
-        display();
-        document.getElementById("resultado").style.display = "block";
-    }
-}
- */
-
 var botonEncriptar = document.getElementById("encriptar");
 botonEncriptar.addEventListener("click", encriptar);
 
@@ -122,7 +93,6 @@ function copiar() {
     document.body.removeChild(aux);
 
     textoEncriptado.value = "";
-
     image.style.display = "block";
     mensaje.style.display = "block";
     mensaje2.style.display = "block";
