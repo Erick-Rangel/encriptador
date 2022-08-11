@@ -96,7 +96,7 @@ function copiar() {
     image.style.display = "block";
     mensaje.style.display = "block";
     mensaje2.style.display = "block";
-
+    document.getElementById("copiar").style.display = "none";
     textoEncriptar.value = "";
 
     alert("Texto copiado");
